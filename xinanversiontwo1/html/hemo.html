@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../css/swiper.css">
+    <link rel="stylesheet" href="../css/pagination.css">
+    <script src="../js/swiper.js"></script>
+    <script src="../js/rem.js"></script>
+    <script src="../js/vue.js"></script>
+    <title>异业联盟客户端</title>
+    <style>
+        *{
+            margin: 0;
+        }
+        .content{
+            background-color: rgb(231, 227, 227);
+            display: flex;
+            justify-content: space-between;
+            flex-flow: row wrap;
+            padding: 0 0.2rem;
+            box-sizing: border-box;
+        }
+        .content-one{
+            margin-top: 0.2rem;
+            margin-bottom: 0.2rem;
+            padding: 0.1rem;
+            background-color: white;
+            border-radius: 0.1rem;
+        }
+
+        /* content-oneDiv内容 */
+        .content-oneDiv{
+            width: 3rem;
+            height: 3rem;
+            background-color: tomato;
+            position: relative;
+        }
+        .text-p1{
+            display: flex;
+            justify-content: space-around;
+        }
+        .text1{
+            width: 3rem;
+            font-size: 0.2rem;
+            color: #858485;
+            height: 0.6rem;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+        }
+        .text-nub1{
+            font-size: 0.25rem;
+            color: #fa5a5a;
+            display: flex;
+ 
+        }
+        .text-hua1{
+            font-size: 0.05rem;
+            color: #858485;
+            text-decoration: line-through;
+            display: flex; 
+        }
+        .text-biao1{
+            font-size: 0.05rem;
+            color: #fa5a5a;
+            display: flex;
+        }
+        
+        /* content-twoDiv内容 */
+        .content-twoDiv{
+            width: 3rem;
+            height: 3rem;
+            background-color: tomato;
+            position: relative;
+        }
+        .text-p2{
+            display: flex;
+            justify-content: space-around;
+        }
+        .text2{
+            width: 3rem;
+            font-size: 0.2rem;
+            color: #858485;
+            height: 0.6rem;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+        }
+        .text-nub2{
+            font-size: 0.25rem;
+            color: #fa5a5a;
+            display: flex;
+ 
+        }
+        .text-hua2{
+            font-size: 0.05rem;
+            color: #858485;
+            text-decoration: line-through;
+            display: flex; 
+        }
+        .text-biao2{
+            font-size: 0.05rem;
+            color: #fa5a5a;
+            display: flex;
+        }
+
+
+        /* content-threeDiv内容 */
+        .content-threeDiv{
+            width: 3rem;
+            height: 3rem;
+            background-color: tomato;
+            position: relative;
+        }
+        .text-p3{
+            display: flex;
+            justify-content: space-around;
+        }
+        .text3{
+            width: 3rem;
+            font-size: 0.2rem;
+            color: #858485;
+            height: 0.6rem;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+        }
+        .text-nub3{
+            font-size: 0.25rem;
+            color: #fa5a5a;
+            display: flex;
+ 
+        }
+        .text-hua3{
+            font-size: 0.05rem;
+            color: #858485;
+            text-decoration: line-through;
+            display: flex; 
+        }
+        .text-biao3{
+            font-size: 0.05rem;
+            color: #fa5a5a;
+            display: flex;
+        }
+
+
+        /* content-frouthDiv内容 */
+        .content-frouthDiv{
+            width: 3rem;
+            height: 3rem;
+            background-color: tomato;
+            position: relative;
+        }
+        .text-p4{
+            display: flex;
+            justify-content: space-around;
+        }
+        .text4{
+            width: 3rem;
+            font-size: 0.2rem;
+            color: #858485;
+            height: 0.6rem;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+        }
+        .text-nub4{
+            font-size: 0.25rem;
+            color: #fa5a5a;
+            display: flex;
+ 
+        }
+        .text-hua4{
+            font-size: 0.05rem;
+            color: #858485;
+            text-decoration: line-through;
+            display: flex; 
+        }
+        .text-biao4{
+            font-size: 0.05rem;
+            color: #fa5a5a;
+            display: flex;
+        }
+
+
+        .content-two{
+            margin-top: 0.2rem;
+            margin-bottom: 0.2rem;
+            padding: 0.1rem;
+            background-color: white;
+            border-radius: 0.1rem;
+        }
+        .content-three{
+            margin-top: 0.2rem;
+            margin-bottom: 0.2rem;
+            padding: 0.1rem;
+            background-color: white;
+            border-radius: 0.1rem;
+        }
+        .content-frouth{
+            margin-top: 0.2rem;
+            margin-bottom: 0.2rem;
+            padding: 0.1rem;
+            background-color: white;
+            border-radius: 0.1rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="app">
+        <!-- //轮播图 -->
+            <div class="swiper-container">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"> Slide1</div>
+                </div>
+                <div class="pagination"></div>
+            </div>
+
+            <!-- 内容 -->
+            <div class="content">
+                    <div class="content-one">
+                        <div class="content-oneDiv"></div>
+                        <p class="text1">中石化中石化中石化中石化中石化石化中石化中石化中石化中中</p>
+                        <div class="text-p1">
+                            <p class="text-nub1">￥730.00</p>
+                            <p class="text-hua1">￥6900</p>
+                            <p class="text-biao1">￥</p>
+                        </div>
+                    </div>
+                    <div class="content-two">
+                        <div class="content-twoDiv"></div>
+                        <p class="text2">中石化中石化中石化中石化中石化石化中石化中石化中石化中中</p>
+                        <div class="text-p2">
+                            <p class="text-nub2">￥730.00</p>
+                            <p class="text-hua2">￥6900</p>
+                            <p class="text-biao2">￥</p>
+                        </div>
+                    </div>
+                    <div class="content-three">
+                        <div class="content-threeDiv"></div>
+                        <p class="text3">中石化中石化中石化中石化中石化石化中石化中石化中石化中中</p>
+                        <div class="text-p3">
+                            <p class="text-nub3">￥730.00</p>
+                            <p class="text-hua3">￥6900</p>
+                            <p class="text-biao3">￥</p>
+                        </div>
+                    </div>
+                    <div class="content-frouth">
+                        <div class="content-frouthDiv"></div>
+                        <p class="text4">中石化中石化中石化中石化中石化石化中石化中石化中石化中中</p>
+                        <div class="text-p4">
+                            <p class="text-nub4">￥730.00</p>
+                            <p class="text-hua4">￥6900</p>
+                            <p class="text-biao4">￥</p>
+                        </div>
+                    </div>
+            </div>
+            
+    </div>
+</body>
+<script>
+    window.onload = function() {
+        var mySwiper = new Swiper('.swiper-container',{
+                autoplay : 4000,//可选选项，自动滑动
+                loop : true,//可选选项，开启循
+            pagination : '.pagination',
+        });  
+    }
+    var app = new Vue({
+        el:'.app',
+        data:{
+
+        },
+        methods:{
+
+        }
+    })
+</script>
+</html>
